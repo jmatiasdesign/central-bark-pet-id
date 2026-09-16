@@ -1,0 +1,18 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f3f4f6;color:#111827}
+.page{min-height:100vh;display:flex;justify-content:center;padding:20px 14px}
+.card{width:100%;max-width:480px;background:#fff;border-radius:28px;padding:20px;box-shadow:0 12px 40px rgba(0,0,0,.08);align-self:flex-start}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.brand-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#111827;font-size:22px}
+.brand-name{font-size:14px;font-weight:900;letter-spacing:1.4px}.brand-sub{font-size:10px;letter-spacing:2.2px;color:#6b7280;font-weight:700}
+.pet-photo{width:180px;height:180px;object-fit:cover;display:block;margin:5px auto 14px;border-radius:50%;border:5px solid #fff;box-shadow:0 5px 22px rgba(0,0,0,.12)}
+.status{width:max-content;margin:0 auto 10px;padding:7px 11px;border-radius:999px;background:#f3f4f6;color:#4b5563;font-size:12px;font-weight:700}
+.status span{display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-right:6px}
+h1{margin:0;text-align:center;font-size:38px;line-height:1.05}.subtitle{margin:8px 0 20px;text-align:center;color:#6b7280;font-size:15px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.info-box,.section{border:1px solid #e5e7eb;border-radius:16px;padding:14px}
+.label{display:block;color:#6b7280;font-size:11px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:5px}.info-box strong{font-size:15px}
+.section{margin-top:10px}.section h2{margin:0 0 11px;font-size:14px}.health-row{display:flex;justify-content:space-between;font-size:14px}.health-row strong{color:#16a34a}
+.owner p{margin:0;font-weight:700}.actions{display:grid;gap:10px;margin-top:17px}
+.btn{display:block;text-align:center;text-decoration:none;padding:15px 16px;border-radius:15px;font-weight:800;font-size:15px}.primary{background:#111827;color:#fff}.secondary{border:1px solid #e5e7eb;color:#111827;background:#fff}
+.footer{margin:17px 8px 2px;color:#6b7280;font-size:11px;line-height:1.5;text-align:center}
+@media(max-width:380px){.card{padding:17px;border-radius:23px}.pet-photo{width:155px;height:155px}h1{font-size:34px}}
