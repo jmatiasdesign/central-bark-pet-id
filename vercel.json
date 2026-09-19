@@ -1,1 +1,20 @@
-{"rewrites":[{"source":"/bali","destination":"/bali/index.html"},{"source":"/rodolfo","destination":"/rodolfo/index.html"},{"source":"/cookie","destination":"/cookie/index.html"}]}
+{
+  "rewrites": [
+    {
+      "source": "/bali",
+      "destination": "/bali/index.html"
+    },
+    {
+      "source": "/rodolfo",
+      "destination": "/rodolfo/index.html"
+    },
+    {
+      "source": "/cookie",
+      "destination": "/cookie/index.html"
+    },
+    {
+      "source": "/juno",
+      "destination": "/juno/index.html"
+    }
+  ]
+}
