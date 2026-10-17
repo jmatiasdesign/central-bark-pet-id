@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#173b4b" />
+  <meta name="description" content="Rocko's pet ID profile. If you've found Rocko, please help him get home safely." />
+  <title>Rocko | Pet ID</title>
+  <style>
+    :root {
+      --navy: #173b4b;
+      --teal: #287b78;
+      --mint: #e8f4f0;
+      --cream: #fbfaf6;
+      --ink: #20323a;
+      --muted: #63747a;
+      --line: #e3e9e7;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #eaf4f1 0, #f8faf8 340px, var(--cream) 100%);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      padding: 24px 14px 36px;
+    }
+    .page { max-width: 480px; margin: 0 auto; }
+    .brand {
+      text-align: center;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin: 8px 0 18px;
+    }
+    .card {
+      background: var(--white);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(23, 59, 75, .12);
+      border: 1px solid rgba(23, 59, 75, .06);
+    }
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 28px 24px 82px;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -5%; right: -5%; bottom: -28px;
+      height: 54px;
+      background: var(--white);
+      border-radius: 50% 50% 0 0 / 65% 65% 0 0;
+    }
+    .hero .eyebrow {
+      margin: 0 0 7px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      color: #bfe2d9;
+    }
+    h1 { margin: 0; font-size: 36px; line-height: 1.1; letter-spacing: -.035em; }
+    .subtitle { margin: 9px 0 0; color: #e1eeeb; font-size: 14px; }
+    .profile-photo {
+      display: block;
+      width: 184px;
+      height: 184px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      border: 7px solid white;
+      box-shadow: 0 8px 25px rgba(23, 59, 75, .17);
+      margin: -62px auto 18px;
+      position: relative;
+      z-index: 1;
+      background: var(--mint);
+    }
+    .content { padding: 0 22px 24px; }
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 0 0 24px;
+    }
+    .pill {
+      background: var(--mint);
+      color: #225e58;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .section-title {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin: 22px 0 10px;
+    }
+    .info {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+    .info:last-child { border-bottom: 0; }
+    .label { color: var(--muted); }
+    .value { text-align: right; font-weight: 650; }
+    .address {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+    .pin {
+      flex: 0 0 38px;
+      width: 38px; height: 38px;
+      display: grid; place-items: center;
+      border-radius: 12px;
+      background: var(--mint);
+      font-size: 19px;
+    }
+    .address-text { min-width: 0; }
+    .address-text strong { display: block; margin-bottom: 2px; }
+    .address-text span { color: var(--muted); font-size: 12px; }
+    .contacts { display: grid; gap: 10px; }
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 13px;
+    }
+    .contact-name { font-size: 12px; color: var(--muted); }
+    .contact-number { font-size: 14px; font-weight: 750; color: var(--ink); text-decoration: none; }
+    .call-link {
+      flex-shrink: 0;
+      text-decoration: none;
+      background: var(--mint);
+      color: #225e58;
+      font-size: 12px;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+    .return-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      width: 100%;
+      margin-top: 22px;
+      padding: 16px 18px;
+      background: var(--teal);
+      color: white;
+      border-radius: 15px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 16px;
+      box-shadow: 0 7px 18px rgba(40, 123, 120, .22);
+    }
+    .return-button:hover { background: #216c69; }
+    .return-note { text-align: center; color: var(--muted); font-size: 12px; margin: 10px 8px 0; }
+    footer { text-align: center; color: #718187; font-size: 11px; padding: 18px 10px 0; }
+    @media (max-width: 360px) {
+      h1 { font-size: 31px; }
+      .content { padding-left: 17px; padding-right: 17px; }
+      .contact { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="brand">Pet ID • Help Me Get Home</div>
+    <article class="card">
+      <header class="hero">
+        <p class="eyebrow">If I’m lost, please help</p>
+        <h1>Hi, I’m Rocko!</h1>
+        <p class="subtitle">I’m loved and have a family waiting for me.</p>
+      </header>
+
+      <img class="profile-photo" src="./rocko-profile.jpeg" alt="Rocko wearing orange headphones" />
+
+      <div class="content">
+        <div class="status-row" aria-label="Health status">
+          <span class="pill">✓ Vaccinations up to date</span>
+          <span class="pill">✓ Neutered</span>
+        </div>
+
+        <h2 class="section-title">My details</h2>
+        <div class="info"><span class="label">Date of birth</span><span class="value">July 10, 2020</span></div>
+        <div class="info"><span class="label">Home area</span><span class="value">Somersworth, New Hampshire</span></div>
+
+        <h2 class="section-title">My home address</h2>
+        <div class="address">
+          <div class="pin" aria-hidden="true">📍</div>
+          <div class="address-text">
+            <strong>48 Hickory Ln</strong>
+            <span>Somersworth, NH 03878-1123</span>
+          </div>
+        </div>
+
+        <h2 class="section-title">Emergency contacts</h2>
+        <div class="contacts">
+          <div class="contact">
+            <div>
+              <div class="contact-name">Emergency contact 1</div>
+              <a class="contact-number" href="tel:+16035075527">+1 (603) 507-5527</a>
+            </div>
+            <a class="call-link" href="tel:+16035075527" aria-label="Call emergency contact 1">Call</a>
+          </div>
+          <div class="contact">
+            <div>
+              <div class="contact-name">Emergency contact 2</div>
+              <a class="contact-number" href="tel:+16035075526">+1 (603) 507-5526</a>
+            </div>
+            <a class="call-link" href="tel:+16035075526" aria-label="Call emergency contact 2">Call</a>
+          </div>
+        </div>
+
+        <a class="return-button" href="https://www.google.com/maps/search/?api=1&amp;query=48%20Hickory%20Ln%2C%20Somersworth%2C%20NH%2003878-1123" target="_blank" rel="noopener noreferrer">
+          📍 Please Help Me Get Home
+        </a>
+        <p class="return-note">Tap the button to open my home location in Google Maps. Please call one of my emergency contacts.</p>
+      </div>
+    </article>
+    <footer>Thank you for helping Rocko get home safely. ❤️</footer>
+  </main>
+</body>
+</html>
